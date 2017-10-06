@@ -1,0 +1,33 @@
+shop:
+  image: dnhsoft/shopware:5.3.2-php7
+  links:
+   - db_wahdhugo
+  volumes:
+   - "./../Local:/shopware/engine/Shopware/Plugins/Local"
+   - "./../HugoTheme:/shopware/themes/Frontend/HugoTheme"
+  ports:
+   - "8000:80"
+  environment:
+   SWDB_HOST: db_wahdhugo
+
+db_wahdhugo:
+  image: tutum/mysql:5.6
+  environment:
+   MYSQL_USER: root
+   MYSQL_PASS: 123456
+
+
+pma:
+  image: dnhsoft/phpmyadmin:4.6.0
+  links:
+   - db_wahdhugo
+  ports:
+   - "8001:80"
+
+mailhog:
+  image: mailhog/mailhog
+  expose:
+   - "1025"
+   - "8025"
+  ports:
+   - "8025:8025"

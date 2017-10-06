@@ -1,0 +1,37 @@
+.navigation-main {
+	background: #111;
+  border-bottom: 0;
+	.unitize(line-height, 56);
+	position: fixed;
+	display: flex;
+	z-index: 1010;
+	width: 100%;
+	top: 0;
+
+	.wahd-header-logo{
+		.unitize(padding-left, 35);
+		.unitize(padding-top, 11);
+	}
+
+  .wahd-header-categories{
+		margin: 0 auto;
+		.navigation--link{
+			color: white;
+			text-transform: uppercase;
+			.unitize(font-size, 12);
+			font-weight: 800;
+			letter-spacing: 0.2em;
+		}
+		.navigation--entry.is--active{
+			.navigation--link{
+				background: transparent;
+				background-image: none;
+				font-weight: 800;
+			}
+		}
+
+    .navigation--list{
+      background: #111;
+    }
+  }
+}
